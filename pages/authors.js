@@ -20,7 +20,7 @@ function ViewAuthorCards() {
   return (
     <>
       {authors.map((author) => (
-        <AuthorCard authorObj={author} />
+        <AuthorCard authorObj={author} key={author.firebaseKey} />
       ))}
     </>
   );

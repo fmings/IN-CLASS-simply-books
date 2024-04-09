@@ -18,6 +18,12 @@ const viewAuthorDetails = (authorFirebaseKey) => new Promise((resolve, reject) =
     }).catch((error) => reject(error));
 });
 
+// const getAuthorDetails = async (authorFirebaseKey) => {
+//   const authorObject = await getSingleAuthor(authorFirebaseKey);
+//   const authorsBooks = await getAuthorBooks(authorFirebaseKey);
+//   return { ...authorObject, books: authorsBooks };
+// };
+
 const deleteAuthorBooks = (authorId) => new Promise((resolve, reject) => {
   getAuthorBooks(authorId).then((booksArray) => {
     console.warn(booksArray, 'Author Books');

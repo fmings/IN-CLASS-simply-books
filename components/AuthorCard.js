@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 function AuthorCard({ authorObj }) {
   return (
@@ -9,6 +10,16 @@ function AuthorCard({ authorObj }) {
       <Card.Body>
         <Card.Title>{authorObj.first_name}</Card.Title>
         <p className="card-text bold">{authorObj.email}</p>
+        <Link href={`/author/${authorObj.firebaseKey}`} passHref>
+          <Button variant="primary" className="m-2">VIEW</Button>
+        </Link>
+        {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
+        <Link href={`/author/edit/${authorObj.firebaseKey}`} passHref>
+          <Button variant="info">EDIT</Button>
+        </Link>
+        <Button variant="danger" className="m-2">
+          DELETE
+        </Button>
       </Card.Body>
     </Card>
   );
