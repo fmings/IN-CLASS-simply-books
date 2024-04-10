@@ -21,22 +21,25 @@ export default function ViewAuthor() {
   // };
 
   return (
-    <div className="mt-5 d-flex flex-wrap">
-      <div className="d-flex flex-column">
-        <img src={authorDetails.image} alt={authorDetails.first_name} style={{ width: '300px' }} />
+    <>
+      <div className="mt-5 d-flex flex-wrap">
+        <div className="d-flex flex-column">
+          <img src={authorDetails.image} alt={authorDetails.first_name} style={{ width: '300px' }} />
+        </div>
+        <div className="text-white ms-5 details">
+          <h5>
+            {authorDetails.first_name} {authorDetails.last_name}
+            {authorDetails.favorite ? ' 🤍' : ''}
+          </h5>
+          Author Email: <a href={`mailto:${authorDetails.email}`}>{authorDetails.email}</a>
+        </div>
       </div>
       <div className="text-white ms-5 details">
-        <h5>
-          {authorDetails.first_name} {authorDetails.last_name}
-          {authorDetails.favorite ? ' 🤍' : ''}
-        </h5>
-        Author Email: <a href={`mailto:${authorDetails.email}`}>{authorDetails.email}</a>
-        <p>
-          {authorDetails.books?.map((book) => (
-            <BookCard bookObj={book} key={book.firebaseKey} />
-          ))}
-        </p>
+        <h2>Angie%apos;s Book(s)</h2>
+        {authorDetails.books?.map((book) => (
+          <BookCard bookObj={book} key={book.firebaseKey} />
+        ))}
       </div>
-    </div>
+    </>
   );
 }

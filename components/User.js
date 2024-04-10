@@ -7,12 +7,12 @@ function User() {
   console.warn({ user });
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
-      <Card.Img variant="top" src={user.photoURL} alt="profile image" style={{ height: '400px' }} />
+    <Card style={{ width: '20rem', margin: '10px' }}>
+      <Card.Img variant="top" src={user.photoURL} alt="profile image" style={{ height: '300px' }} />
       <Card.Body>
         <Card.Title>{user.displayName}</Card.Title>
-        <p className="card-text bold">{user.email}</p>
-        <p className="card-text bold">{user.metadata.lastSignInTime}</p>
+        <p className="card-text bold">Email Address: {user.email}</p>
+        <p className="card-text bold">Last Sign In: {user.metadata.lastSignInTime}</p>
       </Card.Body>
     </Card>
   );
