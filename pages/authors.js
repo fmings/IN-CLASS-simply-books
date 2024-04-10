@@ -19,9 +19,11 @@ function ViewAuthorCards() {
 
   return (
     <>
-      {authors.map((author) => (
-        <AuthorCard authorObj={author} key={author.firebaseKey} onUpdate={getAllAuthors} />
-      ))}
+      <div className="d-flex flex-wrap">
+        {authors.map((author) => (
+          <AuthorCard authorObj={author} key={author.firebaseKey} onUpdate={getAllAuthors} />
+        ))}
+      </div>
     </>
   );
 }
