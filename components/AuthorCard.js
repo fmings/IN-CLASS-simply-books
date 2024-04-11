@@ -15,7 +15,7 @@ function AuthorCard({ authorObj, onUpdate }) {
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Img variant="top" src={authorObj.image} alt={authorObj.first_name} style={{ height: '400px' }} />
       <Card.Body>
-        <Card.Title>{authorObj.first_name}</Card.Title>
+        <Card.Title>{authorObj.first_name} {authorObj.last_name}</Card.Title>
         <p className="card-text bold">{authorObj.email}</p>
         <Link href={`/author/${authorObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
@@ -39,6 +39,7 @@ AuthorCard.propTypes = {
     first_name: PropTypes.string,
     last_name: PropTypes.string,
     image: PropTypes.string,
+    favorite: PropTypes.bool,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };

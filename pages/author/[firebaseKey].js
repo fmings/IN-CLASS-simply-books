@@ -35,7 +35,7 @@ export default function ViewAuthor() {
         </div>
       </div>
       <div className="text-white ms-5 details">
-        <h2>Angie%apos;s Book(s)</h2>
+        <h2>{authorDetails.first_name}&apos;s Book(s)</h2>
         {authorDetails.books?.map((book) => (
           <BookCard bookObj={book} key={book.firebaseKey} />
         ))}
